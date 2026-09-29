@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eufy-ptz-onvif"
+version = "0.1.0"
+description = "ONVIF PTZ shim for eufy pan/tilt cameras, plus a Frigate person-following PTZ driver, both talking to Home Assistant."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Vitor Machado" }]
+requires-python = ">=3.10"
+dependencies = ["paho-mqtt>=2"]
+keywords = ["onvif", "ptz", "eufy", "frigate", "home-assistant", "camera"]
+
+[project.urls]
+Homepage = "https://github.com/machado-vitor/eufy-ptz-onvif"
+
+[project.scripts]
+onvif-eufy-shim = "onvif_eufy_shim:main"
+ptz-follow = "ptz_follow:main"
+
+[tool.setuptools]
+py-modules = ["onvif_eufy_shim", "ptz_follow"]
